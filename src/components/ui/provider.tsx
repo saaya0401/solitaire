@@ -6,11 +6,16 @@ import {
   type ColorModeProviderProps,
 } from "./color-mode"
 import { system } from "../../theme/theme"
+import { GameProvider } from "../../contexts/GameContext"
 
 export function Provider(props: ColorModeProviderProps) {
   return (
     <ChakraProvider value={system}>
-      <ColorModeProvider {...props} />
+      <ColorModeProvider {...props}>
+        <GameProvider>
+          {props.children}
+        </GameProvider>
+      </ColorModeProvider>
     </ChakraProvider>
   )
 }
