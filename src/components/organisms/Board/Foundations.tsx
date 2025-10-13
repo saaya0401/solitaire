@@ -1,7 +1,14 @@
+import { FoundationCard } from "../../atoms/FoundationCard";
+import { Flex } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
-export const Home: FC = memo(() => {
+export const Foundations: FC = memo(() => {
     return (
-        <p>ホームです</p>
+        <Flex gap={10}>
+            <FoundationCard />
+            <FoundationCard />
+            <FoundationCard />
+            <FoundationCard />
+        </Flex>
     );
 });
