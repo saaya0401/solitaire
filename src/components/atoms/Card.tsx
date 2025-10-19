@@ -8,12 +8,14 @@ type Props = {
     children?: ReactNode,
     ml?: number,
     mt?: number,
+    onClick?: () => void;
+    fontSize?: number;
 }
 
 export const Card: FC<Props> = memo((props) => {
-    const { color, border, bg, children, ml, mt } = props;
+    const { color, border, bg, children, ml, mt, onClick, fontSize, } = props;
     return (
-        <Flex justify="center" align="center" fontSize={60} bg={bg ?? undefined} color={color ?? "gray.500"} border={border ?? undefined} borderRadius="md" w={90} h={120} fontWeight="bold" fontFamily="'Mochiy Pop P One', 'sans-serif'" ml={ml ?? undefined} mt={mt ?? undefined}>
+        <Flex justify="center" align="center" fontSize={fontSize ? fontSize : 60} bg={bg ?? undefined} color={color ?? "gray.500"} border={border ?? undefined} borderRadius="md" w={90} h={120} fontWeight="bold" fontFamily="'Mochiy Pop P One', 'sans-serif'" ml={ml ?? undefined} mt={mt ?? undefined} onClick={onClick} userSelect="none" cursor="pointer">
             {children}
         </Flex>
     )

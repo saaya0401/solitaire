@@ -34,7 +34,11 @@ export const useGameInit = () => {
                 }
             }
         }
-        return newTableaus;
+        return {
+            tableaus: newTableaus,
+            stock: deck,
+            waste: []
+        };
     },[])
 
     return { initGame };
